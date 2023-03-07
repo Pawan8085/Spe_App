@@ -21,6 +21,11 @@ public class SpeakerController {
 	public SpeakerController(SpeakerService speakerService) {
 		this.speakerService=speakerService;
 	}
+	
+	@GetMapping
+	public String hello() {
+		return "hello there!";
+	}
 
 	@PostMapping("/add/{key}")
 	public ResponseEntity<Speaker> addProductHandler(@RequestBody Speaker speaker, @PathVariable String key){
